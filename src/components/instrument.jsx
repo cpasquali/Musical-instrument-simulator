@@ -26,6 +26,10 @@ export const Instrument = () => {
     }
   };
 
+  const soundToPlayClick = (note) => {
+    soundToPlay(note);
+  };
+
   useEffect(() => {
     document.body.className = `body-${theme}`;
   }, [theme]);
@@ -44,6 +48,10 @@ export const Instrument = () => {
           <li
             className={`note ${notePress === note ? "pressed" : ""}`}
             key={note}
+            onClick={() => {
+              soundToPlayClick(note);
+              soundToPlay(note);
+            }}
           >
             {note}
           </li>
