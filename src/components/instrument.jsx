@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../components/instrument.css";
 import useTogleTheme from "../customHooks/togleThemeHook";
-import SOUNDS from "../utils/soundsUtil";
+import { soundToPlay, soundToPlayClick } from "../utils/soundsUtil";
 
 export const Instrument = () => {
   const { theme, togleTheme } = useTogleTheme();
@@ -10,25 +10,21 @@ export const Instrument = () => {
 
   useEffect(() => {
     const handleInstrument = (e) => {
-      setNotePress(e.key.toUpperCase());
-      soundToPlay(e.key.toUpperCase());
+      const key = e.key.toUpperCase();
+      if (NOTES.includes(key)) {
+        setNotePress(key);
+        soundToPlay(key);
+      }
     };
 
     window.addEventListener("keydown", handleInstrument);
     window.addEventListener("keyup", () => setNotePress(null));
-  }, []);
 
-  const soundToPlay = (note) => {
-    const sound = SOUNDS[note];
-    if (sound) {
-      sound.currentTime = 0;
-      sound.play();
-    }
-  };
-
-  const soundToPlayClick = (note) => {
-    soundToPlay(note);
-  };
+    return () => {
+      window.removeEventListener("keydown", handleInstrument);
+      window.removeEventListener("keyup", () => setNotePress(null));
+    };
+  }, [NOTES]);
 
   useEffect(() => {
     document.body.className = `body-${theme}`;
