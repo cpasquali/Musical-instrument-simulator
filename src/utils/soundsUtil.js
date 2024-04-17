@@ -1,19 +1,54 @@
-import doSound from "../sounds/doSound.mp3";
-import reSound from "../sounds/reSound.mp3";
-import miSound from "../sounds/miSound.mp3";
-import faSound from "../sounds/faSound.mp3";
-import solSound from "../sounds/solSound.mp3";
-import laSound from "../sounds/laSound.mp3";
-import siSound from "../sounds/siSound.mp3";
+import * as Tone from 'tone';
 
-const SOUNDS = {
-    A: new Audio(doSound),
-    S: new Audio(reSound),
-    D: new Audio(miSound),
-    F: new Audio(faSound),
-    G: new Audio(solSound),
-    H: new Audio(laSound),
-    J: new Audio(siSound),
-  };
+const synth = new Tone.Synth().toDestination();
 
-  export default SOUNDS
+const NOTASPIANO = {
+  C4: () => {},
+  D4: () => {},
+  E4: () => {},
+  F4: () => {},
+  G4: () => {},
+  A4: () => {},
+  B4: () => {},
+};
+
+const soundToPlay = (note) => {
+  const notaRepro = NOTASPIANO[note];
+  if (notaRepro) {
+    notaRepro();
+  }
+
+  switch(note){
+    case "A":
+      synth.triggerAttackRelease("C4", '0.3');
+      break;
+    case "S":
+      synth.triggerAttackRelease("D4", '0.3');
+      break;
+    case "D":
+      synth.triggerAttackRelease("E4", '0.3');
+      break;
+    case "F":
+      synth.triggerAttackRelease("F4", '0.3');
+      break;
+    case "G":
+      synth.triggerAttackRelease("G4", '0.3');
+      break;
+    case "H":
+      synth.triggerAttackRelease("A4", '0.3');
+      break;
+    case "J":
+      synth.triggerAttackRelease("B4", '0.3');
+      break
+  }
+};
+
+const soundToPlayClick = (note) => {
+  const notaRepro = NOTASPIANO[note];
+  if (notaRepro) {
+    soundToPlay(note);
+  }
+
+};
+
+export { NOTASPIANO, soundToPlay, soundToPlayClick };
