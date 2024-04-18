@@ -20,25 +20,25 @@ const soundToPlay = (note) => {
 
   switch(note){
     case "A":
-      synth.triggerAttackRelease("C4", '0.3');
+      synth.triggerAttackRelease("C4", '0.2');
       break;
     case "S":
-      synth.triggerAttackRelease("D4", '0.3');
+      synth.triggerAttackRelease("D4", '0.2');
       break;
     case "D":
-      synth.triggerAttackRelease("E4", '0.3');
+      synth.triggerAttackRelease("E4", '0.2');
       break;
     case "F":
-      synth.triggerAttackRelease("F4", '0.3');
+      synth.triggerAttackRelease("F4", '0.2');
       break;
     case "G":
-      synth.triggerAttackRelease("G4", '0.3');
+      synth.triggerAttackRelease("G4", '0.2');
       break;
     case "H":
-      synth.triggerAttackRelease("A4", '0.3');
+      synth.triggerAttackRelease("A4", '0.2');
       break;
     case "J":
-      synth.triggerAttackRelease("B4", '0.3');
+      synth.triggerAttackRelease("B4", '0.2');
       break
   }
 };

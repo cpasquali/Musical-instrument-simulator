@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import "../components/instrument.css";
 import useTogleTheme from "../customHooks/togleThemeHook";
 import { soundToPlay, soundToPlayClick } from "../utils/soundsUtil";
+import { NOTES, N } from "../utils/arraysNotesUtil"
 
 export const Instrument = () => {
   const { theme, togleTheme } = useTogleTheme();
-  const NOTES = ["A", "S", "D", "F", "G", "H", "J"];
   const [notePress, setNotePress] = useState(null);
 
   useEffect(() => {
@@ -40,7 +40,7 @@ export const Instrument = () => {
         )}
       </button>
       <ul className={"notes"}>
-        {NOTES.map((note) => (
+        {NOTES.map((note, indice) => (
           <li
             className={`note ${notePress === note ? "pressed" : ""}`}
             key={note}
@@ -49,7 +49,7 @@ export const Instrument = () => {
               soundToPlay(note);
             }}
           >
-            {note}
+            {note} <sub>{N[indice]}</sub>
           </li>
         ))}
       </ul>
