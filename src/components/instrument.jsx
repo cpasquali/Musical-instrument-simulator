@@ -3,10 +3,12 @@ import "../components/instrument.css";
 import useTogleTheme from "../customHooks/togleThemeHook";
 import { soundToPlay, soundToPlayClick } from "../utils/soundsUtil";
 import { NOTES, N } from "../utils/arraysNotesUtil"
+import useTogleShowNotes from "../customHooks/togleShowNotes";
 
 export const Instrument = () => {
   const { theme, togleTheme } = useTogleTheme();
   const [notePress, setNotePress] = useState(null);
+  const { show, togleShowNotes} = useTogleShowNotes();
 
   useEffect(() => {
     const handleInstrument = (e) => {
@@ -31,14 +33,17 @@ export const Instrument = () => {
   }, [theme]);
 
   return (
-    <section className={`container-${theme}`}>
-      <button className={`btnTheme-${theme}`} onClick={togleTheme}>
-        {theme === "light" ? (
-          <ion-icon name="sunny-outline"></ion-icon>
-        ) : (
-          <ion-icon name="moon-outline"></ion-icon>
-        )}
-      </button>
+    <section className={`container ${theme}`}>
+      <section className="buttonsContainer">
+        <button className={`btnTheme ${theme}`} onClick={togleTheme}>
+          {theme === "light" ? (
+            <ion-icon name="sunny-outline"></ion-icon>
+          ) : (
+            <ion-icon name="moon-outline"></ion-icon>
+          )}
+        </button>
+        <button className={`btnMostrar ${theme}`} onClick={togleShowNotes}>Mostrar</button>
+      </section>
       <ul className={"notes"}>
         {NOTES.map((note, indice) => (
           <li
@@ -49,7 +54,7 @@ export const Instrument = () => {
               soundToPlay(note);
             }}
           >
-            {note} <sub>{N[indice]}</sub>
+            {show ? <sub>{N[indice]}</sub> : ""}
           </li>
         ))}
       </ul>

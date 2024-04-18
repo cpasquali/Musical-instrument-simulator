@@ -8,12 +8,12 @@ const NOTES = [
     "J"];
 
 const N = [
-    "(Do)",
-    "(Re)",
-    "(Mi)",
-    "(Fa)",
-    "(Sol)",
-    "(La)",
-    "(Si)"];
+    "Do",
+    "Re",
+    "Mi",
+    "Fa",
+    "Sol",
+    "La",
+    "Si"];
 
  export { NOTES, N }   
