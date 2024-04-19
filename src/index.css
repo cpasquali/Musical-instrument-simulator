@@ -10,9 +10,9 @@ body{
 }
 
 .body.dark{
-  background-color: rgb(22, 22, 22);
+  background: linear-gradient(to bottom, #2c3e50, #34495e, #2c3e50);
 }
 
 .body.light{
-  background-color: white;
+  background: linear-gradient(to bottom, #5ac8fa, #e3a4cc);
 }
