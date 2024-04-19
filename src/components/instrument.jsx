@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
 import "../components/instrument.css";
-import useTogleTheme from "../customHooks/togleThemeHook";
+import useToggleTheme from "../customHooks/toggleThemeHook";
 import { soundToPlay, soundToPlayClick } from "../utils/soundsUtil";
 import { NOTES, N } from "../utils/arraysNotesUtil"
-import useTogleShowNotes from "../customHooks/togleShowNotes";
+import useToggleShowNotes from "../customHooks/toggleShowNotes";
 
 export const Instrument = () => {
-  const { theme, togleTheme } = useTogleTheme();
+  const { theme, toggleTheme } = useToggleTheme();
   const [notePress, setNotePress] = useState(null);
-  const { show, togleShowNotes} = useTogleShowNotes();
+  const { show, toggleShowNotes} = useToggleShowNotes();
 
   useEffect(() => {
     const handleInstrument = (e) => {
@@ -35,14 +35,14 @@ export const Instrument = () => {
   return (
     <section className={`container ${theme}`}>
       <section className="buttonsContainer">
-        <button className={`btnTheme ${theme}`} onClick={togleTheme}>
+        <button className={`btnTheme ${theme}`} onClick={toggleTheme}>
           {theme === "light" ? (
             <ion-icon name="sunny-outline"></ion-icon>
           ) : (
             <ion-icon name="moon-outline"></ion-icon>
           )}
         </button>
-        <button className={`btnMostrar ${theme}`} onClick={togleShowNotes}>Mostrar</button>
+        <button className={`btnMostrar ${theme}`} onClick={toggleShowNotes}>Mostrar</button>
       </section>
       <ul className={"notes"}>
         {NOTES.map((note, indice) => (

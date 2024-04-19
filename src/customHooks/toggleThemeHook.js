@@ -1,13 +1,13 @@
 import { useState } from "react"
 
-const useTogleTheme = () => {
+const useToggleTheme = () => {
     const [theme, setTheme] = useState("light");
 
-    const togleTheme = () => {
+    const toggleTheme = () => {
         setTheme(theme === "light" ? "dark" : "light")
     };
 
-    return {theme, togleTheme}
+    return {theme, toggleTheme}
 };
 
-export default useTogleTheme;
+export default useToggleTheme;
