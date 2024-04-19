@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "../components/instrument.css";
 import useToggleTheme from "../customHooks/toggleThemeHook";
 import { soundToPlay, soundToPlayClick } from "../utils/soundsUtil";
-import { NOTES, N } from "../utils/arraysNotesUtil"
+import { NOTES } from "../utils/arraysNotesUtil"
 import useToggleShowNotes from "../customHooks/toggleShowNotes";
 
 export const Instrument = () => {
@@ -54,7 +54,7 @@ export const Instrument = () => {
               soundToPlay(note);
             }}
           >
-            {show ? <sub>{N[indice]}</sub> : ""}
+            {show ? <sub>{note}</sub> : ""}
           </li>
         ))}
       </ul>
