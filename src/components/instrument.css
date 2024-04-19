@@ -115,11 +115,19 @@
   .note{
     width: 70px;
   }
+
+  .btnMostrar:hover{
+    transform: scale(1);
+  }
 }
 
 @media (max-width: 634px) {
     .note {
       width: 50px;
+    }
+
+    .btnMostrar:hover{
+      transform: scale(1);
     }
   }
 
@@ -127,20 +135,23 @@
     .note {
         width: 40px; 
       }
+
+      .btnMostrar:hover{
+        transform: scale(1);
+      }
  } 
 
  @media (width <= 329px){
     .btnTheme{
       margin-bottom: 12px;
     }
+
+    .btnMostrar:hover{
+      transform: scale(1);
+    }
  }
 
  @media (width <= 327px){
-
-  body{
-   overflow: hidden;
-  }
-
   .notes{
     margin-left: 30px;
   }
