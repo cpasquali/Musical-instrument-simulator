@@ -116,6 +116,19 @@
     width: 70px;
   }
 
+  .buttonsContainer{
+    display: block;
+  }
+
+  .btnTheme{
+    border-radius: 40px;
+    width: 500px;
+  }
+
+  .btnMostrar{
+    width: 500px;
+  }
+
   .btnMostrar:hover{
     transform: scale(1);
   }
@@ -129,6 +142,20 @@
     .btnMostrar:hover{
       transform: scale(1);
     }
+
+    .buttonsContainer{
+      display: block;
+    }
+  
+    .btnTheme{
+      border-radius: 40px;
+      width: 400px;
+    }
+  
+    .btnMostrar{
+      width: 400px;
+    }
+    
   }
 
  @media (width <= 425px){
@@ -139,6 +166,19 @@
       .btnMostrar:hover{
         transform: scale(1);
       }
+
+      .buttonsContainer{
+        display: block;
+      }
+    
+      .btnTheme{
+        border-radius: 40px;
+        width: 300px;
+      }
+    
+      .btnMostrar{
+        width: 300px;
+      }
  } 
 
  @media (width <= 329px){
@@ -148,6 +188,19 @@
 
     .btnMostrar:hover{
       transform: scale(1);
+    }
+
+    .buttonsContainer{
+      display: block;
+    }
+  
+    .btnTheme{
+      border-radius: 40px;
+      width: 200px;
+    }
+  
+    .btnMostrar{
+      width: 200px;
     }
  }
 
@@ -160,15 +213,18 @@
     width: 33px; 
   }
 
+  .buttonsContainer{
+    display: block;
+  }
+
   .btnTheme{
-    margin-left: 30px;
+    border-radius: 40px;
+    width: 150px;
   }
 
   .btnMostrar{
-    height: 10px;
-    font-size: 24px;
+    width: 150px;
   }
-
   .btnMostrar:hover{
     transform: scale(1);
   }

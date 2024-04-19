@@ -29,7 +29,7 @@ export const Instrument = () => {
   }, [NOTES]);
 
   useEffect(() => {
-    document.body.className = `body-${theme}`;
+    document.body.className = `body ${theme}`;
   }, [theme]);
 
   return (
