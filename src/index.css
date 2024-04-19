@@ -6,7 +6,6 @@ body{
   align-items: center;
   justify-content: center;
   font-family: Arial, Helvetica, sans-serif;
-  transition: 0.3s;
 }
 
 .body.dark{
