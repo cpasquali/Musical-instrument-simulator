@@ -110,157 +110,60 @@
     transform: scale(1.2);
 }
 
-@media (width <= 768px){
-  .container.light, .container.dark{
-    border: none;
-    box-shadow: none;
-    background-color: transparent;
-  }
-
-  .note{
-    width: 70px;
-  }
-
-  .buttonsContainer{
-    display: block;
-
-  }
-
-  .btnTheme{
-    border-radius: 40px;
-    width: 500px;
-  }
-
-  .btnMostrar.light,.btnTheme.light{
-    background-color: white;
-  }
-
-  .btnMostrar{
-    width: 500px;
-  }
-
-  .btnMostrar:hover{
-    transform: scale(1);
-  }
-  .btnTheme:hover{
-    transform: scale(1);
-  }
-}
-
-@media (max-width: 634px) {
-    .note {
-      width: 50px;
-    }
-
-    .btnMostrar:hover{
-      transform: scale(1);
-    }
-
-    .buttonsContainer{
-      display: block;
-    }
-  
-    .btnTheme{
-      border-radius: 40px;
-      width: 400px;
-    }
-  
-    .btnMostrar{
-      width: 400px;
-    }
-    .btnMostrar:hover{
-      transform: scale(1);
-    }
-  
-    .btnTheme{
-      transform: scale(1);
-    }
-  }
-
- @media (width <= 425px){
-    .note {
-        width: 40px; 
-      }
-
-      .btnMostrar:hover{
-        transform: scale(1);
-      }
-
-      .buttonsContainer{
-        display: block;
-      }
-    
-      .btnTheme{
-        border-radius: 40px;
-        width: 300px;
-      }
-    
-      .btnMostrar{
-        width: 300px;
-      }
-      .btnMostrar:hover{
-        transform: scale(1);
-      }
-    
-      .btnTheme{
-        transform: scale(1);
-      }
- } 
-
- @media (width <= 329px){
-
-    .btnMostrar:hover{
-      transform: scale(1);
-    }
-
-    .buttonsContainer{
-      display: block;
-    }
-  
-    .btnTheme{
-      border-radius: 40px;
-      width: 200px;
-    }
-  
-    .btnMostrar{
-      width: 200px;
-    }
-    .btnMostrar:hover{
-      transform: scale(1);
-    }
-  
-    .btnTheme{
-      transform: scale(1);
-    }
- }
-
- @media (width <= 327px){
-  .notes{
-    margin-left: 30px;
+@media (max-width: 768px) {
+  .notes {
+    padding: 20px; 
+    flex-wrap: wrap; 
+    justify-content: center; 
   }
 
   .note {
-    width: 33px; 
+    width: 50px; 
+    height: 150px; 
+    margin: 1px; 
+  }
+
+  .buttonsContainer {
+    flex-direction: row; 
+    align-items: center; 
+  }
+
+  .btnMostrar,
+  .btnTheme {
+    width: 80%; 
+  }
+
+  .btnMostrar:hover, .btnTheme:hover{
+    transform: scale(1);
+  }
+}
+@media (max-width: 420px){
+  .note {
+    width: 40px; 
+    height: 150px; 
+    margin: 1px; 
+  }
+}
+
+@media (max-width: 352px){
+  .note {
+    width: 38px; 
+  }
+}
+
+@media (max-width: 320px){
+
+  .container{
+    width: 250px;
+  }
+
+  .note {
+    width: 25px; 
+    height: 150px; 
+    margin: 1px; 
   }
 
   .buttonsContainer{
-    display: block;
+    gap: 15px;
   }
-
-  .btnTheme{
-    border-radius: 40px;
-    width: 150px;
-
-  }
-
-  .btnMostrar{
-    width: 150px;
-  }
-  .btnMostrar:hover{
-    transform: scale(1);
-  }
-
-  .btnTheme{
-    transform: scale(1);
-  }
- }
+}

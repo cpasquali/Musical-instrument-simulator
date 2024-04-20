@@ -26,7 +26,7 @@ export const Instrument = () => {
       window.removeEventListener("keydown", handleInstrument);
       window.removeEventListener("keyup", () => setNotePress(null));
     };
-  }, [NOTES]);
+  }, []);
 
   useEffect(() => {
     document.body.className = `body ${theme}`;
@@ -45,7 +45,7 @@ export const Instrument = () => {
         <button className={`btnMostrar ${theme}`} onClick={toggleShowNotes}>Mostrar</button>
       </section>
       <ul className={"notes"}>
-        {NOTES.map((note, indice) => (
+        {NOTES.map((note) => (
           <li
             className={`note ${notePress === note ? "pressed" : ""}`}
             key={note}
