@@ -5,6 +5,7 @@ const NOTES = [
     "F",
     "G",
     "H",
-    "J"];
+    "J"
+];
 
  export { NOTES }   
