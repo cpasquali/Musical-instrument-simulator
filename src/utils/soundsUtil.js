@@ -43,12 +43,4 @@ const soundToPlay = (note) => {
   }
 };
 
-const soundToPlayClick = (note) => {
-  const notaRepro = NOTASPIANO[note];
-  if (notaRepro) {
-    soundToPlay(note);
-  }
-
-};
-
-export { NOTASPIANO, soundToPlay, soundToPlayClick };
+export { NOTASPIANO, soundToPlay };

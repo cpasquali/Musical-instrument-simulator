@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../components/instrument.css";
 import useToggleTheme from "../customHooks/toggleThemeHook";
-import { soundToPlay, soundToPlayClick } from "../utils/soundsUtil";
+import { soundToPlay } from "../utils/soundsUtil";
 import { NOTES } from "../utils/arraysNotesUtil"
 import useToggleShowNotes from "../customHooks/toggleShowNotes";
 
@@ -50,7 +50,6 @@ export const Instrument = () => {
             className={`note ${notePress === note ? "pressed" : ""}`}
             key={note}
             onClick={() => {
-              soundToPlayClick(note);
               soundToPlay(note);
             }}
           >
